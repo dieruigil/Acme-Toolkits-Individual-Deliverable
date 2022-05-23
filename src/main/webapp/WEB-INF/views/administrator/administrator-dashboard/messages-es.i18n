@@ -3,6 +3,7 @@ administrator.administrator-dashboard.form.title.general-indicators = Indicadore
 administrator.administrator-dashboard.form.title.component = Estadísticas sobre componentes
 administrator.administrator-dashboard.form.title.tool = Estadísticas sobre herramientas
 administrator.administrator-dashboard.form.title.patronage = Estadísticas sobre mecenazgos
+administrator.administrator-dashboard.form.title.chimpum = Estadísticas de chimpum
 
 administrator.administrator-dashboard.form.title.total-components = Número total de componentes
 administrator.administrator-dashboard.form.title.total-tools = Número total de herramientas
@@ -12,6 +13,7 @@ administrator.administrator-dashboard.form.title.average = Media
 administrator.administrator-dashboard.form.title.deviation = Desviación
 administrator.administrator-dashboard.form.title.maximum = Máximo
 administrator.administrator-dashboard.form.title.minimum = Mínimo
+administrator.administrator-dashboard.form.title.ratio = Ratio
 
 administrator.administrator-dashboard.form.title.proposed = Propuestos
 administrator.administrator-dashboard.form.title.accepted = Aceptados

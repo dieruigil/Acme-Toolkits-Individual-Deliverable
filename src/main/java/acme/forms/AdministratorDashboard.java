@@ -30,7 +30,7 @@ public class AdministratorDashboard {
 
 	// Attributes -------------------------------------------------------------
 
-	int						totalNumberOfComponents;
+	int										totalNumberOfComponents;
 
 	Map<Pair<String,String>,Double>			averageRetailPriceOfComponentsGroupedByTechnologyAndCurrency;
 	Map<Pair<String,String>,Double>			deviationRetailPriceOfComponentsGroupedByTechnologyAndCurrency;
@@ -52,6 +52,12 @@ public class AdministratorDashboard {
 	Map<Status,Double>						deviationBudgetOfPatronagesGroupedByStatus;
 	Map<Status,Double>						minimumBudgetOfPatronagesGroupedByStatus;
 	Map<Status,Double>						maximumBudgetOfPatronagesGroupedByStatus;
+	
+	int										ratioOfArtefactWithChimpum;
+	Map<String, Double> 					averageBudgetChimpumGroupedByCurrency;
+	Map<String, Double> 					deviationBudgetChimpumGroupedByCurrency;
+	Map<String, Double> 					minimumBudgetChimpumGroupedByCurrency;
+	Map<String, Double> 					maximumBudgetChimpumGroupedByCurrency;
 	
 
 	// Derived attributes -----------------------------------------------------

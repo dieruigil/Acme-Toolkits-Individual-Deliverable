@@ -68,5 +68,22 @@ public interface AdministratorAdministratorDashboardRepository extends AbstractR
 	
 	@Query("select distinct(a.technology) from Artifact a")
 	List<String> allTechnologies();
+	
+	// Methods for chimpum
+	
+	@Query("select count(a) from Artifact a where a.chimpum != null")
+	int ratioOfArtefactWithChimpum();
+	
+	@Query("select c.budget.currency, avg(c.budget.amount) from Chimpum c group by c.budget.currency")
+	List<String> averageBudgetChimpumGroupedByCurrency();
+	
+	@Query("select c.budget.currency, stddev(c.budget.amount) from Chimpum c group by c.budget.currency")
+	List<String> deviationBudgetChimpumGroupedByCurrency();
+	
+	@Query("select c.budget.currency, min(c.budget.amount) from Chimpum c group by c.budget.currency")
+	List<String> minimumBudgetChimpumGroupedByCurrency();
+	
+	@Query("select c.budget.currency, max(c.budget.amount) from Chimpum c group by c.budget.currency")
+	List<String> maximumBudgetChimpumGroupedByCurrency();
 
 }

@@ -58,6 +58,12 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 		final Map<Status,Double>	minimumBudgetOfPatronagesGroupedByStatus;
 		final Map<Status,Double>	maximumBudgetOfPatronagesGroupedByStatus;
 		
+		int ratioOfArtefactWithChimpum;
+		Map<String, Double> averageBudgetChimpumGroupedByCurrency;
+		Map<String, Double> deviationBudgetChimpumGroupedByCurrency;
+		Map<String, Double> minimumBudgetChimpumGroupedByCurrency;
+		Map<String, Double> maximumBudgetChimpumGroupedByCurrency;
+		
 		
 		totalNumberOfComponents = this.repository.totalNumberOfComponents();
 		totalNumberOfTools = this.repository.totalNumberOfTools();
@@ -97,6 +103,18 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 		maximumBudgetOfPatronagesGroupedByStatus = this.patronagesMethodsMap(
 			this.repository.maximumBudgetOfPatronagesGroupedByStatus());
 		
+		//Chimpum methods
+		
+		ratioOfArtefactWithChimpum = this.repository.ratioOfArtefactWithChimpum();
+		averageBudgetChimpumGroupedByCurrency = this.toolsMethodsMap(
+			this.repository.averageBudgetChimpumGroupedByCurrency());
+		deviationBudgetChimpumGroupedByCurrency = this.toolsMethodsMap(
+			this.repository.deviationBudgetChimpumGroupedByCurrency());
+		minimumBudgetChimpumGroupedByCurrency = this.toolsMethodsMap(
+			this.repository.minimumBudgetChimpumGroupedByCurrency());
+		maximumBudgetChimpumGroupedByCurrency = this.toolsMethodsMap(
+			this.repository.maximumBudgetChimpumGroupedByCurrency());
+		
 		
 		result = new AdministratorDashboard();
 		
@@ -118,6 +136,12 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 		result.setDeviationBudgetOfPatronagesGroupedByStatus(deviationBudgetOfPatronagesGroupedByStatus);
 		result.setMinimumBudgetOfPatronagesGroupedByStatus(minimumBudgetOfPatronagesGroupedByStatus);
 		result.setMaximumBudgetOfPatronagesGroupedByStatus(maximumBudgetOfPatronagesGroupedByStatus);
+		
+		result.setRatioOfArtefactWithChimpum(ratioOfArtefactWithChimpum);
+		result.setAverageBudgetChimpumGroupedByCurrency(averageBudgetChimpumGroupedByCurrency);
+		result.setDeviationBudgetChimpumGroupedByCurrency(deviationBudgetChimpumGroupedByCurrency);
+		result.setMinimumBudgetChimpumGroupedByCurrency(minimumBudgetChimpumGroupedByCurrency);
+		result.setMaximumBudgetChimpumGroupedByCurrency(maximumBudgetChimpumGroupedByCurrency);
 		
 		return result;
 	}
@@ -246,7 +270,12 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 			"averageBudgetOfPatronagesGroupedByStatus",
 			"deviationBudgetOfPatronagesGroupedByStatus",
 			"minimumBudgetOfPatronagesGroupedByStatus",
-			"maximumBudgetOfPatronagesGroupedByStatus");
+			"maximumBudgetOfPatronagesGroupedByStatus",
+			"ratioOfArtefactWithChimpum",
+			"averageBudgetChimpumGroupedByCurrency",
+			"deviationBudgetChimpumGroupedByCurrency",
+			"minimumBudgetChimpumGroupedByCurrency",
+			"maximumBudgetChimpumGroupedByCurrency");
 		
 		
 		model.setAttribute("statusList", Status.values());
