@@ -12,3 +12,12 @@ inventor.chimpum.form.label.budget = Presupuesto
 inventor.chimpum.form.label.link = Más información
 
 inventor.chimpum.form.button.artifact = Artefactos
+inventor.chimpum.form.button.create = Crear
+inventor.chimpum.form.button.update = Actualizar
+inventor.chimpum.form.button.delete = Borrar
+
+inventor.chimpum.form.error.negative-budget = La cantidad debe ser positiva
+inventor.chimpum.form.error.negative-currency = La moneda es incorrecta
+inventor.chimpum.form.error.startDate = El periodo de tiempo debe emepzar al menos un mes después de su creación
+inventor.chimpum.form.error.finishDate = El periodo de tiempo debe ser de al menos una semana
+inventor.chimpum.form.error.spam = El texto contiene spam

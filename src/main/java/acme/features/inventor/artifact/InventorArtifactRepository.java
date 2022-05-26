@@ -52,6 +52,6 @@ public interface InventorArtifactRepository extends AbstractRepository{
 	@Query("select config.weakSpamTreshold from ConfigData config")
 	int findWeakSpamTreshold();
 	
-	@Query("select a from Artifact a where a.chimpum.id = :id")
-	Collection<Artifact> findArtifactsByChimpumId(int id);
+	@Query("select a from Artifact a where a.chimpum.id = :id a.published = true")
+	Collection<Artifact> findPublishedArtifactsByChimpumId(int id);
 }
