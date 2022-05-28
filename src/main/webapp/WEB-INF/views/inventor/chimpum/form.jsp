@@ -19,7 +19,7 @@
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete')}">
 			<acme:submit code="inventor.chimpum.form.button.update" action="/inventor/chimpum/update"/>
 			<acme:submit code="inventor.chimpum.form.button.delete" action="/inventor/chimpum/delete"/>
-			<acme:button code="inventor.chimpum.form.button.artifact" action="/inventor/artifact/list-with-chimpum?chimpumId=${chimpumId}"/>
+			<acme:button code="inventor.chimpum.form.button.artifact" action="/any/artifact/list-with-chimpum?chimpumId=${chimpumId}"/>
 		</jstl:when>
 	</jstl:choose>
 </acme:form>

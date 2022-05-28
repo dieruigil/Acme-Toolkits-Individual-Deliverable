@@ -1,10 +1,13 @@
 package acme.features.inventor.artifact;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.artifacts.Artifact;
 import acme.entities.artifacts.ArtifactType;
+import acme.entities.chimpum.Chimpum;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -37,10 +40,22 @@ public class InventorArtifactCreateService implements AbstractCreateService<Inve
 		assert entity != null;
 		assert errors != null;
 
-		String type;
-		type = request.getModel().getString("type").toUpperCase();
-		entity.setArtifactType(ArtifactType.valueOf(type));
+		String artifactType;
+		
+		artifactType = request.getModel().getString("artifactType").toUpperCase();
+		
+		entity.setArtifactType(ArtifactType.valueOf(artifactType));
 		request.bind(entity, errors, "name", "code", "technology" , "description" , "retailPrice", "link");
+		
+		if(entity.getArtifactType().equals(ArtifactType.TOOL)) {
+			int chimpumId;
+			Chimpum chimpum;
+			
+			chimpumId = request.getModel().getInteger("chimpum");
+			chimpum = this.repository.findChimpumById(chimpumId);
+
+			entity.setChimpum(chimpum);
+		}
 		
 	}
 
@@ -50,14 +65,17 @@ public class InventorArtifactCreateService implements AbstractCreateService<Inve
 		assert entity != null;
 		assert model != null;
 		
-		String type;
+		String artifactType;
+		List<Chimpum> chimpums;
 		
-		type = request.getModel().getString("type").toUpperCase();
-		entity.setArtifactType(ArtifactType.valueOf(type));
-		model.setAttribute("type", type);
-		request.unbind(entity, model,"name", "code", "technology" , "description" , "retailPrice", "published", "link");
-	
+		artifactType = request.getModel().getString("type").toUpperCase();
+		chimpums = this.repository.findAllChimpums();
 		
+		entity.setArtifactType(ArtifactType.valueOf(artifactType));
+		
+		request.unbind(entity, model,"name", "code", "technology" , "description" , "retailPrice", "published", "link", "chimpum");
+		model.setAttribute("artifactType", artifactType);
+		model.setAttribute("chimpums", chimpums);
 	}
 
 	@Override
