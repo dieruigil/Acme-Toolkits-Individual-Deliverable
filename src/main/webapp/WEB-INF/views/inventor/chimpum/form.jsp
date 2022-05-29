@@ -3,7 +3,7 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="inventor.chimpum.form.label.code" path="code"/>
+	<acme:input-textbox readonly="true" code="inventor.chimpum.form.label.code" path="code"/>
 	<acme:input-moment readonly="true" code="inventor.chimpum.form.label.creation-moment" path="creationMoment"/>
 	<acme:input-textbox code="inventor.chimpum.form.label.title" path="title"/>
 	<acme:input-textbox code="inventor.chimpum.form.label.description" path="description"/>

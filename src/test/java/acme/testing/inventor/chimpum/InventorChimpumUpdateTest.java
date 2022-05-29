@@ -11,7 +11,7 @@ public class InventorChimpumUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/chimpum/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String code, final String title, final String description,
+	public void positiveTest(final int recordIndex, final String title, final String description,
 		final String startDate, final String finishDate,final String budget, final String link) {
 		
 		super.signIn("inventor2", "inventor2");
@@ -22,7 +22,6 @@ public class InventorChimpumUpdateTest extends TestHarness {
 		super.clickOnListingRecord(0);
 		super.checkFormExists();
 		
-		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("startDate", startDate);
@@ -38,7 +37,7 @@ public class InventorChimpumUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/chimpum/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void negativeTest(final int recordIndex, final String code, final String title, final String description,
+	public void negativeTest(final int recordIndex, final String title, final String description,
 		final String startDate, final String finishDate,final String budget, final String link) {
 		
 		super.signIn("inventor2", "inventor2");
@@ -49,7 +48,6 @@ public class InventorChimpumUpdateTest extends TestHarness {
 		super.clickOnListingRecord(0);
 		super.checkFormExists();
 		
-		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("startDate", startDate);

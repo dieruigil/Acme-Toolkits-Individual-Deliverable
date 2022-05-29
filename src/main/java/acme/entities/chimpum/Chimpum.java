@@ -1,5 +1,6 @@
 package acme.entities.chimpum;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -29,9 +30,11 @@ public class Chimpum extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 	
+	/*
 	@NotBlank
 	//@Pattern(regexp = "")
 	protected String 				code;
+	*/
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
@@ -60,6 +63,16 @@ public class Chimpum extends AbstractEntity {
 	
 	@URL
 	protected String				link;
+	
+	// Derived attributes -----------------------------------------------------
+	
+	public String getCode() {
+		String code;
+		
+		code = new SimpleDateFormat("dd/MM/yy").format(this.creationMoment);
+		
+		return code;
+	}
 	
 	// Relationships ----------------------------------------------------------
 	
