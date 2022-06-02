@@ -49,7 +49,7 @@ public class InventorChimpumUpdateService implements AbstractUpdateService<Inven
 		
 		request.unbind(entity, model, "creationMoment", "title", "description", "startDate",
 			"finishDate", "budget", "link");
-		model.setAttribute("code", entity.getCode());
+		model.setAttribute("code", entity.getPattern());
 	}
 
 	@Override

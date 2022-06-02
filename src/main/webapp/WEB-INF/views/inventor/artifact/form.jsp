@@ -16,8 +16,9 @@
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">
 			<jstl:if test="${artifactType.toString() == 'TOOL'}">
 				<acme:input-select code="inventor.artifact.list.label.chimpum" path="chimpum">
+					<acme:input-option code="inventor.artifact.form.option.none" value="-1"/>
 					<jstl:forEach items="${chimpums}" var="optionChimpum">
-						<acme:input-option code="${optionChimpum.code}" value="${optionChimpum.id}" selected="${chimpum.equals(optionChimpum)}"/>
+						<acme:input-option code="${optionChimpum.getPattern()}" value="${optionChimpum.id}" selected="${chimpum.equals(optionChimpum)}"/>
 					</jstl:forEach>
 				</acme:input-select>
 			</jstl:if>
@@ -30,8 +31,9 @@
 		<jstl:when test="${command == 'create'}">
 			<jstl:if test="${artifactType.toString() == 'TOOL'}">
 				<acme:input-select code="inventor.artifact.list.label.chimpum" path="chimpum">
+					<acme:input-option code="inventor.artifact.form.option.none" value="-1"/>
 					<jstl:forEach items="${chimpums}" var="optionChimpum">
-						<acme:input-option code="${optionChimpum.code}" value="${optionChimpum.id}"/>
+						<acme:input-option code="${optionChimpum.getPattern()}" value="${optionChimpum.id}"/>
 					</jstl:forEach>
 				</acme:input-select>
 			</jstl:if>

@@ -21,3 +21,4 @@ inventor.chimpum.form.error.negative-currency = The currency is incorrect
 inventor.chimpum.form.error.startDate = The period of time must start at least one month after the patronage is created
 inventor.chimpum.form.error.finishDate = The period of time must be at least one week long
 inventor.chimpum.form.error.spam = Text contains spam
+inventor.chimpum.form.error.duplicated-code = Duplicated code

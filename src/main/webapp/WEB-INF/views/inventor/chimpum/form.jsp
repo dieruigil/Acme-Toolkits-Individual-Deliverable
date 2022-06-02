@@ -3,10 +3,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox readonly="true" code="inventor.chimpum.form.label.code" path="code"/>
+	<acme:input-textbox readonly="${acme:anyOf(command, 'show, update, delete')}" code="inventor.chimpum.form.label.code" path="code" placeholder="AMZ-159-L"/>
 	<acme:input-moment readonly="true" code="inventor.chimpum.form.label.creation-moment" path="creationMoment"/>
 	<acme:input-textbox code="inventor.chimpum.form.label.title" path="title"/>
-	<acme:input-textbox code="inventor.chimpum.form.label.description" path="description"/>
+	<acme:input-textarea code="inventor.chimpum.form.label.description" path="description"/>
 	<acme:input-moment code="inventor.chimpum.form.label.start-date" path="startDate"/>
 	<acme:input-moment code="inventor.chimpum.form.label.finish-date" path="finishDate"/>
 	<acme:input-money code="inventor.chimpum.form.label.budget" path="budget"/>

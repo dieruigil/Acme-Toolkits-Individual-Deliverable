@@ -1,6 +1,7 @@
 package acme.testing.inventor.chimpum;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -27,5 +28,14 @@ public class InventorChimpumDeleteTest extends TestHarness {
 		super.clickOnSubmit("Delete");
 		super.checkNotErrorsExist();
 		super.signOut();
+	}
+	
+	@Test
+	@Order(30)
+	public void hackingTest() {
+		// HINT: the framework doesn't currently provide enough support to hack
+		// HINT+ this feature, so the hacking tests must be performed manually.
+		// HINT+ Login as a patron and search for a chimpum id in DBeaver.
+		// HINT+ Navigate to the url /inventor/chimpum/delete?id=chimpumId
 	}
 }

@@ -1,6 +1,7 @@
 package acme.features.inventor.chimpum;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -35,4 +36,7 @@ public interface InventorChimpumRepository extends AbstractRepository {
 	
 	@Query("select a from Artifact a where a.chimpum.id = :id")
 	Collection<Artifact> findArtifactsByChimpumId(int id);
+	
+	@Query("select c from Chimpum c where c.code = :code")
+	List<Chimpum> chimpumsWithSameCode(String code);
 }

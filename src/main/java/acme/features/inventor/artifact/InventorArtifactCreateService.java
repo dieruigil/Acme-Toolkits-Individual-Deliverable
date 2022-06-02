@@ -52,7 +52,7 @@ public class InventorArtifactCreateService implements AbstractCreateService<Inve
 			Chimpum chimpum;
 			
 			chimpumId = request.getModel().getInteger("chimpum");
-			chimpum = this.repository.findChimpumById(chimpumId);
+			chimpum = chimpumId == -1 ? null : this.repository.findChimpumById(chimpumId);
 
 			entity.setChimpum(chimpum);
 		}

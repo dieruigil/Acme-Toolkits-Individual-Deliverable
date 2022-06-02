@@ -10,6 +10,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -30,11 +31,9 @@ public class Chimpum extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 	
-	/*
 	@NotBlank
-	//@Pattern(regexp = "")
+	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	protected String 				code;
-	*/
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
@@ -66,12 +65,12 @@ public class Chimpum extends AbstractEntity {
 	
 	// Derived attributes -----------------------------------------------------
 	
-	public String getCode() {
-		String code;
+	public String getPattern() {
+		String pattern;
 		
-		code = new SimpleDateFormat("dd/MM/yy").format(this.creationMoment);
+		pattern = new SimpleDateFormat("dd/MM/yy").format(this.creationMoment);
 		
-		return code;
+		return pattern + "-" + this.code;
 	}
 	
 	// Relationships ----------------------------------------------------------

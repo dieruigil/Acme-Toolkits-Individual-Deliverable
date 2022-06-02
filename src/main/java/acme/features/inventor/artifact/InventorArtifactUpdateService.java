@@ -54,7 +54,7 @@ public class InventorArtifactUpdateService implements AbstractUpdateService<Inve
 			Chimpum chimpum;
 			
 			chimpumId = request.getModel().getInteger("chimpum");
-			chimpum = this.repository.findChimpumById(chimpumId);
+			chimpum = chimpumId == -1 ? null : this.repository.findChimpumById(chimpumId);
 
 			entity.setChimpum(chimpum);
 		}
@@ -73,7 +73,7 @@ public class InventorArtifactUpdateService implements AbstractUpdateService<Inve
 		
 		chimpums = this.repository.findAllChimpums();
 		
-		request.unbind(entity, model,"name", "code", "technology" , "description" , "retailPrice", "artifactType", "published", "link", "chimpum");
+		request.unbind(entity, model,"name", "technology" , "description" , "retailPrice", "artifactType", "published", "link", "chimpum");
 		model.setAttribute("chimpums", chimpums);
 	}
 

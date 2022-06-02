@@ -1,4 +1,4 @@
-key,creation-moment,title,description,start-date,finish-date,budget,link
-chimpum-01,"2020/02/23 16:23",Título chimpum 1, Descripción chimpum 1,"2020/03/25 16:23","2020/04/02 16:23","EUR 150.00",https://www.google.com
-chimpum-02,"2020/05/18 12:00",Título chimpum 2, Descripción chimpum 2,"2020/06/23 16:23","2020/07/12 16:23","EUR 250.00",null
-chimpum-03,"2020/02/23 16:23",Título chimpum 3, Descripción chimpum 3,"2020/03/25 16:23","2020/04/02 16:23","EUR 150.00",https://www.google.com
+key,code,creation-moment,title,description,start-date,finish-date,budget,link
+chimpum-01,ABC-123-D,"2020/02/23 16:23",Título chimpum 1, Descripción chimpum 1,"2020/03/25 16:23","2020/04/02 16:23","EUR 150.00",https://www.google.com
+chimpum-02,YXZ-789-A,"2020/05/18 12:00",Título chimpum 2, Descripción chimpum 2,"2020/06/23 16:23","2020/07/12 16:23","EUR 250.00",null
+chimpum-03,ERT-375-P,"2020/02/23 16:23",Título chimpum 3, Descripción chimpum 3,"2020/03/25 16:23","2020/04/02 16:23","EUR 150.00",https://www.google.com

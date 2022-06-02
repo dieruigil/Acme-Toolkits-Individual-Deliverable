@@ -3,6 +3,7 @@ package acme.features.inventor.chimpum;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "creationMoment", "title", "description", "startDate",
+		request.bind(entity, errors, "code", "creationMoment", "title", "description", "startDate",
 			"finishDate", "budget", "link");
 	}
 
@@ -48,9 +49,8 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "creationMoment", "title", "description", "startDate",
+		request.unbind(entity, model, "code", "creationMoment", "title", "description", "startDate",
 			"finishDate", "budget", "link");
-		model.setAttribute("code", entity.getCode());
 	}
 
 	@Override
@@ -82,6 +82,23 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		weakSpamTerms = this.repository.findWeakSpamTerms();
 		strongSpamThreshold = this.repository.findStrongSpamTreshold();
 		weakSpamThreshold = this.repository.findWeakSpamTreshold();
+		
+		// if code and creation moment are duplicated show error (the entire code includes the creation moment)
+		if (!errors.hasErrors("code")) {
+			List<Chimpum> chimpumsWithSameCode;
+			int numberOfChimpumWithPattern;
+			
+			chimpumsWithSameCode = this.repository.chimpumsWithSameCode(entity.getCode());
+			
+			numberOfChimpumWithPattern = 0;
+			for(final Chimpum chimpum: chimpumsWithSameCode) {
+				//can't check creation moment in SQL, don't want to compare with seconds and minutes
+				if(chimpum.getPattern().equals(entity.getPattern()))
+					numberOfChimpumWithPattern ++;
+			}
+			
+			errors.state(request, numberOfChimpumWithPattern == 0, "code", "inventor.chimpum.form.error.duplicated-code");
+		}
 		
 		if (!errors.hasErrors("budget")) {
 			final String currency = entity.getBudget().getCurrency();
