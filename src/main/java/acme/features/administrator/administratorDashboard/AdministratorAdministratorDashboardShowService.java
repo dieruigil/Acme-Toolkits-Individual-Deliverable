@@ -58,11 +58,11 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 		final Map<Status,Double>	minimumBudgetOfPatronagesGroupedByStatus;
 		final Map<Status,Double>	maximumBudgetOfPatronagesGroupedByStatus;
 		
-		double ratioOfArtefactWithChimpum;
-		Map<String, Double> averageBudgetChimpumGroupedByCurrency;
-		Map<String, Double> deviationBudgetChimpumGroupedByCurrency;
-		Map<String, Double> minimumBudgetChimpumGroupedByCurrency;
-		Map<String, Double> maximumBudgetChimpumGroupedByCurrency;
+		double ratioOfArtefactWithPomp;
+		Map<String, Double> averageBudgetPompGroupedByCurrency;
+		Map<String, Double> deviationBudgetPompGroupedByCurrency;
+		Map<String, Double> minimumBudgetPompGroupedByCurrency;
+		Map<String, Double> maximumBudgetPompGroupedByCurrency;
 		
 		
 		totalNumberOfComponents = this.repository.totalNumberOfComponents();
@@ -105,16 +105,16 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 		
 		//Chimpum methods
 		
-		ratioOfArtefactWithChimpum = this.repository.totalNumberOfTools() == 0 ? 0.0
-			: (double) this.repository.numberOfArtefactWithChimpum() / (double) this.repository.totalNumberOfTools();
-		averageBudgetChimpumGroupedByCurrency = this.toolsMethodsMap(
-			this.repository.averageBudgetChimpumGroupedByCurrency());
-		deviationBudgetChimpumGroupedByCurrency = this.toolsMethodsMap(
-			this.repository.deviationBudgetChimpumGroupedByCurrency());
-		minimumBudgetChimpumGroupedByCurrency = this.toolsMethodsMap(
-			this.repository.minimumBudgetChimpumGroupedByCurrency());
-		maximumBudgetChimpumGroupedByCurrency = this.toolsMethodsMap(
-			this.repository.maximumBudgetChimpumGroupedByCurrency());
+		ratioOfArtefactWithPomp = this.repository.totalNumberOfTools() == 0 ? 0.0
+			: (double) this.repository.numberOfArtefactWithPomp() / (double) this.repository.totalNumberOfComponents();
+		averageBudgetPompGroupedByCurrency = this.toolsMethodsMap(
+			this.repository.averageBudgetPompGroupedByCurrency());
+		deviationBudgetPompGroupedByCurrency = this.toolsMethodsMap(
+			this.repository.deviationBudgetPompGroupedByCurrency());
+		minimumBudgetPompGroupedByCurrency = this.toolsMethodsMap(
+			this.repository.minimumBudgetPompGroupedByCurrency());
+		maximumBudgetPompGroupedByCurrency = this.toolsMethodsMap(
+			this.repository.maximumBudgetPompGroupedByCurrency());
 		
 		
 		result = new AdministratorDashboard();
@@ -138,11 +138,11 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 		result.setMinimumBudgetOfPatronagesGroupedByStatus(minimumBudgetOfPatronagesGroupedByStatus);
 		result.setMaximumBudgetOfPatronagesGroupedByStatus(maximumBudgetOfPatronagesGroupedByStatus);
 		
-		result.setRatioOfArtefactWithChimpum(ratioOfArtefactWithChimpum);
-		result.setAverageBudgetChimpumGroupedByCurrency(averageBudgetChimpumGroupedByCurrency);
-		result.setDeviationBudgetChimpumGroupedByCurrency(deviationBudgetChimpumGroupedByCurrency);
-		result.setMinimumBudgetChimpumGroupedByCurrency(minimumBudgetChimpumGroupedByCurrency);
-		result.setMaximumBudgetChimpumGroupedByCurrency(maximumBudgetChimpumGroupedByCurrency);
+		result.setRatioOfArtefactWithPomp(ratioOfArtefactWithPomp);
+		result.setAverageBudgetPompGroupedByCurrency(averageBudgetPompGroupedByCurrency);
+		result.setDeviationBudgetPompGroupedByCurrency(deviationBudgetPompGroupedByCurrency);
+		result.setMinimumBudgetPompGroupedByCurrency(minimumBudgetPompGroupedByCurrency);
+		result.setMaximumBudgetPompGroupedByCurrency(maximumBudgetPompGroupedByCurrency);
 		
 		return result;
 	}
@@ -272,11 +272,11 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 			"deviationBudgetOfPatronagesGroupedByStatus",
 			"minimumBudgetOfPatronagesGroupedByStatus",
 			"maximumBudgetOfPatronagesGroupedByStatus",
-			"ratioOfArtefactWithChimpum",
-			"averageBudgetChimpumGroupedByCurrency",
-			"deviationBudgetChimpumGroupedByCurrency",
-			"minimumBudgetChimpumGroupedByCurrency",
-			"maximumBudgetChimpumGroupedByCurrency");
+			"ratioOfArtefactWithPomp",
+			"averageBudgetPompGroupedByCurrency",
+			"deviationBudgetPompGroupedByCurrency",
+			"minimumBudgetPompGroupedByCurrency",
+			"maximumBudgetPompGroupedByCurrency");
 		
 		
 		model.setAttribute("statusList", Status.values());

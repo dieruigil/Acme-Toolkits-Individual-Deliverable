@@ -1,0 +1,24 @@
+inventor.pomp.list.label.code = Code
+inventor.pomp.list.label.creation-moment = Creation moment
+inventor.pomp.list.label.name = Name
+
+inventor.pomp.form.label.code = Code
+inventor.pomp.form.label.creation-moment = Creation moment
+inventor.pomp.form.label.name = Name
+inventor.pomp.form.label.explanation = Explanation
+inventor.pomp.form.label.start-date = Start date
+inventor.pomp.form.label.finish-date = Finish date
+inventor.pomp.form.label.expenditure = Expenditure
+inventor.pomp.form.label.more-info = More info
+
+inventor.pomp.form.button.artifact = Artifacts
+inventor.pomp.form.button.create = Create
+inventor.pomp.form.button.update = Update
+inventor.pomp.form.button.delete = Delete
+
+inventor.pomp.form.error.negative-expenditure = The amount must be positive
+inventor.pomp.form.error.negative-currency = The currency is incorrect
+inventor.pomp.form.error.startDate = The period of time must start at least one month after the patronage is created
+inventor.pomp.form.error.finishDate = The period of time must be at least one week long
+inventor.pomp.form.error.spam = Text contains spam
+inventor.pomp.form.error.duplicated-code = Duplicated code

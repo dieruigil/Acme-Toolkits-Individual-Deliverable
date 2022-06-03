@@ -50,12 +50,12 @@ public class AnyArtifactShowService implements AbstractShowService<Any, Artifact
 		assert entity != null;
 		assert model != null;
 
-		String chimpumCode;
+		String pompCode;
 		
-		chimpumCode = entity.getChimpum() == null ? null : entity.getChimpum().getPattern();
+		pompCode = entity.getPomp() == null ? null : entity.getPomp().getPattern();
 		
 		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "artifactType", "link");
-		model.setAttribute("chimpum", chimpumCode);
+		model.setAttribute("pomp", pompCode);
 	}
 
 }

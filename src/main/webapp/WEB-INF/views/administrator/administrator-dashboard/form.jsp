@@ -4,9 +4,9 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<!-- Showing chimpum data -->
+<!-- Showing pomp data -->
 
-<h1><acme:message code="administrator.administrator-dashboard.form.title.chimpum"/></h1>
+<h1><acme:message code="administrator.administrator-dashboard.form.title.pomp"/></h1>
 
 <table class="table table-sm">
 <caption><acme:message code="administrator.administrator-dashboard.form.title.ratio"/></caption>
@@ -15,7 +15,7 @@
 			<acme:message code="administrator.administrator-dashboard.form.title.ratio"/>
 		</th>
 		<td>
-			<jstl:set var="value" value="${ratioOfArtefactWithChimpum}"/>
+			<jstl:set var="value" value="${ratioOfArtefactWithPomp}"/>
 			<acme:print value="${value}"/>
 		</td>
 	</tr>
@@ -30,7 +30,7 @@
 				<acme:print value="${currency}"/>
 			</th>
 			<td>
-				<jstl:set var="value" value="${averageBudgetChimpumGroupedByCurrency.getOrDefault(currency,0.0)}"/>
+				<jstl:set var="value" value="${averageBudgetPompGroupedByCurrency.getOrDefault(currency,0.0)}"/>
 				<acme:print value="${value}"/>
 			</td>
 		</tr>
@@ -46,7 +46,7 @@
 				<acme:print value="${currency}"/>
 			</th>
 			<td>
-				<jstl:set var="value" value="${deviationBudgetChimpumGroupedByCurrency.getOrDefault(currency,0.0)}"/>
+				<jstl:set var="value" value="${deviationBudgetPompGroupedByCurrency.getOrDefault(currency,0.0)}"/>
 				<acme:print value="${value}"/>
 			</td>
 		</tr>
@@ -62,7 +62,7 @@
 				<acme:print value="${currency}"/>
 			</th>
 			<td>
-				<jstl:set var="value" value="${minimumBudgetChimpumGroupedByCurrency.getOrDefault(currency,0.0)}"/>
+				<jstl:set var="value" value="${minimumBudgetPompGroupedByCurrency.getOrDefault(currency,0.0)}"/>
 				<acme:print value="${value}"/>
 			</td>
 		</tr>
@@ -78,7 +78,7 @@
 				<acme:print value="${currency}"/>
 			</th>
 			<td>
-				<jstl:set var="value" value="${maximumBudgetChimpumGroupedByCurrency.getOrDefault(currency,0.0)}"/>
+				<jstl:set var="value" value="${maximumBudgetPompGroupedByCurrency.getOrDefault(currency,0.0)}"/>
 				<acme:print value="${value}"/>
 			</td>
 		</tr>

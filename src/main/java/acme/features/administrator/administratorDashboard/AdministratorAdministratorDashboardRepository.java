@@ -69,21 +69,21 @@ public interface AdministratorAdministratorDashboardRepository extends AbstractR
 	@Query("select distinct(a.technology) from Artifact a")
 	List<String> allTechnologies();
 	
-	// Methods for chimpum
+	// Methods for pomp
 	
-	@Query("select count(a) from Artifact a where a.chimpum != null")
-	int numberOfArtefactWithChimpum();
+	@Query("select count(a) from Artifact a where a.pomp != null")
+	int numberOfArtefactWithPomp();
 	
-	@Query("select c.budget.currency, avg(c.budget.amount) from Chimpum c group by c.budget.currency")
-	List<String> averageBudgetChimpumGroupedByCurrency();
+	@Query("select p.expenditure.currency, avg(p.expenditure.amount) from Pomp p group by p.expenditure.currency")
+	List<String> averageBudgetPompGroupedByCurrency();
 	
-	@Query("select c.budget.currency, stddev(c.budget.amount) from Chimpum c group by c.budget.currency")
-	List<String> deviationBudgetChimpumGroupedByCurrency();
+	@Query("select p.expenditure.currency, stddev(p.expenditure.amount) from Pomp p group by p.expenditure.currency")
+	List<String> deviationBudgetPompGroupedByCurrency();
 	
-	@Query("select c.budget.currency, min(c.budget.amount) from Chimpum c group by c.budget.currency")
-	List<String> minimumBudgetChimpumGroupedByCurrency();
+	@Query("select p.expenditure.currency, min(p.expenditure.amount) from Pomp p group by p.expenditure.currency")
+	List<String> minimumBudgetPompGroupedByCurrency();
 	
-	@Query("select c.budget.currency, max(c.budget.amount) from Chimpum c group by c.budget.currency")
-	List<String> maximumBudgetChimpumGroupedByCurrency();
+	@Query("select p.expenditure.currency, max(p.expenditure.amount) from Pomp p group by p.expenditure.currency")
+	List<String> maximumBudgetPompGroupedByCurrency();
 
 }

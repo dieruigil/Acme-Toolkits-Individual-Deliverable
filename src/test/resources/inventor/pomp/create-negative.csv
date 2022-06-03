@@ -1,0 +1,19 @@
+recordIndex,code,creation-moment,name,explanation,start-date,finish-date,expenditure,more-info
+1,AB-87,,explanation-test-2,"2031/06/10 12:34","2031/06/21 10:21","EUR 78.99",https://www.google.com
+2,DF-23,hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo ho,explanation-test-3,"2031/06/10 12:34","2031/06/21 10:21","EUR 78.99",https://www.google.com
+3,DF-23,name-test-4,,"2031/06/10 12:34","2031/06/21 10:21","EUR 78.99",https://www.google.com
+4,DF-23,name-test-5,hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hola mundo hol,"2031/06/10 12:34","2031/06/21 10:21","EUR 78.99",https://www.google.com
+5,DF-23,name-test-6,explanation-test-6,,"2031/06/21 10:21","EUR 78.99",https://www.google.com
+6,DF-23,name-test-7,explanation-test-7,"2019/06/10 12:34","2031/06/21 10:21","EUR 78.99",https://www.google.com
+7,DF-23,name-test-8,explanation-test-8,"2031/06/10 12:34",,"EUR 78.99",https://www.google.com
+8,DF-23,name-test-9,explanation-test-9,"2031/06/10 12:34","2031/06/13 10:21","EUR 78.99",https://www.google.com
+9,DF-23,name-test-10,explanation-test-10,"2030/06/10 12:34","2030/06/21 10:21","ASD 20.19",https://www.google.com
+10,DF-23,name-test-11,explanation-test-11,"2030/06/10 12:34","2030/06/21 10:21","EUR -20.19",https://www.google.com
+11,DF-23,name-test-12,explanation-test-12,"2030/06/10 12:34","2030/06/21 10:21",,https://www.google.com
+12,DF-23,sexy name test,explanation-test-13,"2030/06/10 12:34","2030/06/21 10:21","EUR 20.00",https://www.google.com
+13,DF-23,hard core name test,explanation-test-14,"2030/06/10 12:34","2030/06/21 10:21","EUR 20.00",https://www.google.com
+14,DF-23,name-test-12,nigeria explanation test,"2030/06/10 12:34","2030/06/21 10:21","EUR 20.00",https://www.google.com
+15,DF-23,name-test-12,viagra explanation test,"2030/06/10 12:34","2030/06/21 10:21","EUR 20.00",https://www.google.com
+16,,name-test-4,explanation-test-2,"2031/06/10 12:34","2031/06/21 10:21","EUR 78.99",https://www.google.com
+17,R-111-R,name-test-4,explanation-test-2,"2031/06/10 12:34","2031/06/21 10:21","EUR 78.99",https://www.google.com
+18,GH-18,name-test-4,explanation-test-2,"2031/06/10 12:34","2031/06/21 10:21","EUR 78.99",https://www.google.com

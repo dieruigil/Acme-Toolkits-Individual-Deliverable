@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.artifacts.Artifact;
 import acme.entities.artifacts.ArtifactType;
-import acme.entities.chimpum.Chimpum;
+import acme.entities.pomp.Pomp;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -47,14 +47,14 @@ public class InventorArtifactCreateService implements AbstractCreateService<Inve
 		entity.setArtifactType(ArtifactType.valueOf(artifactType));
 		request.bind(entity, errors, "name", "code", "technology" , "description" , "retailPrice", "link");
 		
-		if(entity.getArtifactType().equals(ArtifactType.TOOL)) {
-			int chimpumId;
-			Chimpum chimpum;
+		if(entity.getArtifactType().equals(ArtifactType.COMPONENT)) {
+			int pompId;
+			Pomp pomp;
 			
-			chimpumId = request.getModel().getInteger("chimpum");
-			chimpum = chimpumId == -1 ? null : this.repository.findChimpumById(chimpumId);
+			pompId = request.getModel().getInteger("pomp");
+			pomp = pompId == -1 ? null : this.repository.findPompById(pompId);
 
-			entity.setChimpum(chimpum);
+			entity.setPomp(pomp);
 		}
 		
 	}
@@ -66,16 +66,16 @@ public class InventorArtifactCreateService implements AbstractCreateService<Inve
 		assert model != null;
 		
 		String artifactType;
-		List<Chimpum> chimpums;
+		List<Pomp> pomps;
 		
 		artifactType = request.getModel().getString("type").toUpperCase();
-		chimpums = this.repository.findAllChimpums();
+		pomps = this.repository.findAllPomps();
 		
 		entity.setArtifactType(ArtifactType.valueOf(artifactType));
 		
-		request.unbind(entity, model,"name", "code", "technology" , "description" , "retailPrice", "published", "link", "chimpum");
+		request.unbind(entity, model,"name", "code", "technology" , "description" , "retailPrice", "published", "link", "pomp");
 		model.setAttribute("artifactType", artifactType);
-		model.setAttribute("chimpums", chimpums);
+		model.setAttribute("pomps", pomps);
 	}
 
 	@Override

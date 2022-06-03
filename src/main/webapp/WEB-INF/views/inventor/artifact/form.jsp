@@ -14,11 +14,11 @@
 	
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">
-			<jstl:if test="${artifactType.toString() == 'TOOL'}">
-				<acme:input-select code="inventor.artifact.list.label.chimpum" path="chimpum">
+			<jstl:if test="${artifactType.toString() == 'COMPONENT'}">
+				<acme:input-select code="inventor.artifact.list.label.pomp" path="pomp">
 					<acme:input-option code="inventor.artifact.form.option.none" value="-1"/>
-					<jstl:forEach items="${chimpums}" var="optionChimpum">
-						<acme:input-option code="${optionChimpum.getPattern()}" value="${optionChimpum.id}" selected="${chimpum.equals(optionChimpum)}"/>
+					<jstl:forEach items="${pomps}" var="optionPomp">
+						<acme:input-option code="${optionPomp.getPattern()}" value="${optionPomp.id}" selected="${pomp.equals(optionPomp.getPattern())}"/>
 					</jstl:forEach>
 				</acme:input-select>
 			</jstl:if>
@@ -29,11 +29,11 @@
 			<acme:submit code="inventor.artifact.form.button.publish" action="/inventor/artifact/publish"/>
 		</jstl:when>
 		<jstl:when test="${command == 'create'}">
-			<jstl:if test="${artifactType.toString() == 'TOOL'}">
-				<acme:input-select code="inventor.artifact.list.label.chimpum" path="chimpum">
+			<jstl:if test="${artifactType.toString() == 'COMPONENT'}">
+				<acme:input-select code="inventor.artifact.list.label.pomp" path="pomp">
 					<acme:input-option code="inventor.artifact.form.option.none" value="-1"/>
-					<jstl:forEach items="${chimpums}" var="optionChimpum">
-						<acme:input-option code="${optionChimpum.getPattern()}" value="${optionChimpum.id}"/>
+					<jstl:forEach items="${pomps}" var="optionPomp">
+						<acme:input-option code="${optionPomp.getPattern()}" value="${optionPomp.id}"/>
 					</jstl:forEach>
 				</acme:input-select>
 			</jstl:if>
@@ -42,7 +42,7 @@
 			<acme:submit code="inventor.artifact.form.button.create" action="/inventor/artifact/create"/>
 		</jstl:when>		
 		<jstl:when test="${command == 'show' && published == true }">
-			<acme:input-textbox code="inventor.artifact.list.label.chimpum" path="chimpum"/>
+			<acme:input-textbox code="inventor.artifact.list.label.pomp" path="pomp"/>
 			<acme:input-textbox code="inventor.artifact.list.label.type" path="artifactType"/>
 		</jstl:when>
 	</jstl:choose>

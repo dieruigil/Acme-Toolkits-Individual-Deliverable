@@ -1,0 +1,24 @@
+inventor.pomp.list.label.code = Código
+inventor.pomp.list.label.creation-moment = Fecha de creación
+inventor.pomp.list.label.name = Nombre
+
+inventor.pomp.form.label.code = Código
+inventor.pomp.form.label.creation-moment = Fecha de creación
+inventor.pomp.form.label.name = Nombre
+inventor.pomp.form.label.explanation = Explicación
+inventor.pomp.form.label.start-date = Fecha de inicio
+inventor.pomp.form.label.finish-date = Fecha final
+inventor.pomp.form.label.expenditure = Gastos
+inventor.pomp.form.label.more-info = Más información
+
+inventor.pomp.form.button.artifact = Artefactos
+inventor.pomp.form.button.create = Crear
+inventor.pomp.form.button.update = Actualizar
+inventor.pomp.form.button.delete = Borrar
+
+inventor.pomp.form.error.negative-expenditure = La cantidad debe ser positiva
+inventor.pomp.form.error.negative-currency = La moneda es incorrecta
+inventor.pomp.form.error.startDate = El periodo de tiempo debe emepzar al menos un mes después de su creación
+inventor.pomp.form.error.finishDate = El periodo de tiempo debe ser de al menos una semana
+inventor.pomp.form.error.spam = El texto contiene spam
+inventor.pomp.form.error.duplicated-code = Código duplicado

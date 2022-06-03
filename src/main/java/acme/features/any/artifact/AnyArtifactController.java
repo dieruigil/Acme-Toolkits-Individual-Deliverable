@@ -24,7 +24,7 @@ public class AnyArtifactController extends AbstractController<Any, Artifact> {
 	protected AnyArtifactListToolkitService			listToolkitService;
 	
 	@Autowired
-	protected AnyArtifactListWithChimpum			listWithChimpum;
+	protected AnyArtifactListWithPomp			listWithPomp;
 	
 	// Constructors -----------------------------------------------------------
 
@@ -34,7 +34,7 @@ public class AnyArtifactController extends AbstractController<Any, Artifact> {
 		
 		super.addCommand("list-published","list",this.listService);
 		super.addCommand("list-toolkit","list" ,this.listToolkitService);
-		super.addCommand("list-with-chimpum", "list", this.listWithChimpum);
+		super.addCommand("list-with-pomp", "list", this.listWithPomp);
 		super.addCommand("show", this.showService);
 	}
 }

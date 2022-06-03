@@ -3,7 +3,7 @@ administrator.administrator-dashboard.form.title.general-indicators = General In
 administrator.administrator-dashboard.form.title.component = Components statistics 
 administrator.administrator-dashboard.form.title.tool = Tools statistics
 administrator.administrator-dashboard.form.title.patronage = Patronages statistics
-administrator.administrator-dashboard.form.title.chimpum = Chimpum statistics
+administrator.administrator-dashboard.form.title.pomp = Pomp statistics
 
 administrator.administrator-dashboard.form.title.total-components = Total number of components
 administrator.administrator-dashboard.form.title.total-tools = Total number of tools

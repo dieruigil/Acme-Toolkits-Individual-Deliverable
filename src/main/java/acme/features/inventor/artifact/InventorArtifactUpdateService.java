@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.artifacts.Artifact;
 import acme.entities.artifacts.ArtifactType;
-import acme.entities.chimpum.Chimpum;
+import acme.entities.pomp.Pomp;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -49,14 +49,14 @@ public class InventorArtifactUpdateService implements AbstractUpdateService<Inve
 		assert entity != null;
 		assert errors != null;
 		
-		if(entity.getArtifactType().equals(ArtifactType.TOOL)) {
-			int chimpumId;
-			Chimpum chimpum;
+		if(entity.getArtifactType().equals(ArtifactType.COMPONENT)) {
+			int pompId;
+			Pomp pomp;
 			
-			chimpumId = request.getModel().getInteger("chimpum");
-			chimpum = chimpumId == -1 ? null : this.repository.findChimpumById(chimpumId);
+			pompId = request.getModel().getInteger("chimpum");
+			pomp = pompId == -1 ? null : this.repository.findPompById(pompId);
 
-			entity.setChimpum(chimpum);
+			entity.setPomp(pomp);
 		}
 
 		request.bind(entity, errors, "name", "code", "technology" , "description" , "retailPrice", "artifactType", "link");
@@ -69,12 +69,15 @@ public class InventorArtifactUpdateService implements AbstractUpdateService<Inve
 		assert entity != null;
 		assert model != null;
 		
-		List<Chimpum> chimpums;
+		List<Pomp> pomps;
+		String pomp;
 		
-		chimpums = this.repository.findAllChimpums();
+		pomps = this.repository.findAllPomps();
+		pomp = entity.getPomp() == null ? "" : entity.getPomp().getPattern();
 		
-		request.unbind(entity, model,"name", "technology" , "description" , "retailPrice", "artifactType", "published", "link", "chimpum");
-		model.setAttribute("chimpums", chimpums);
+		request.unbind(entity, model,"name", "technology" , "description" , "retailPrice", "artifactType", "published", "link");
+		model.setAttribute("pomp", pomp);
+		model.setAttribute("pomps", pomps);
 	}
 
 	@Override

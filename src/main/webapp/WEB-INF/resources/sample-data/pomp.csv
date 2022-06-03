@@ -1,0 +1,4 @@
+key,code,creation-moment,name,explanation,start-date,finish-date,expenditure,more-info
+pomp-01,AB-12,"2020/02/23 16:23",Nombre pomp 1, Explicación pomp 1,"2020/03/25 16:23","2020/04/02 16:23","EUR 150.00",https://www.google.com
+pomp-02,YX-23,"2020/05/18 12:00",Nombre pomp 2, Explicación pomp 2,"2020/06/23 16:23","2020/07/12 16:23","EUR 250.00",null
+pomp-03,ER-23,"2020/02/23 16:23",Nombre pomp 3, Explicación pomp 3,"2020/03/25 16:23","2020/04/02 16:23","EUR 150.00",https://www.google.com
