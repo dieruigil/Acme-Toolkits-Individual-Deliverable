@@ -10,6 +10,9 @@
 	<acme:input-textarea code="any.artifact.form.label.description" path="description"/>
 	<acme:input-money code="any.artifact.form.label.retailprice" path="retailPrice"/>
 	<acme:input-textbox code="any.artifact.form.label.type" path="artifactType"/>
+	<jstl:if test="${artifactType.toString() == 'TOOL'}">
+		<acme:input-textbox code="any.artifact.list.label.chimpum" path="chimpum"/>
+	</jstl:if>
 	<acme:input-textbox code="any.artifact.form.label.link" path="link"/>
 
 </acme:form>

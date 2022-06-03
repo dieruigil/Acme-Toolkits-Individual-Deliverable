@@ -59,7 +59,12 @@ public class InventorArtifactShowService implements AbstractShowService<Inventor
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "artifactType", "link", "chimpum");
+		String chimpumCode;
+		
+		chimpumCode = entity.getChimpum() == null ? null : entity.getChimpum().getPattern();
+		
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "artifactType", "link");
+		model.setAttribute("chimpum", chimpumCode);
 		
 		List<String> types;
 		List<Chimpum> chimpums;

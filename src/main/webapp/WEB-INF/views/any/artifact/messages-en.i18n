@@ -10,3 +10,5 @@ any.artifact.list.label.quantity = Quantity
 any.artifact.list.label.name = Name
 any.artifact.list.label.retailPrice = Price
 any.artifact.list.label.artifactType = Type
+
+any.artifact.list.label.chimpum = Chimpum

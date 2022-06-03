@@ -42,7 +42,7 @@
 			<acme:submit code="inventor.artifact.form.button.create" action="/inventor/artifact/create"/>
 		</jstl:when>		
 		<jstl:when test="${command == 'show' && published == true }">
-			<acme:input-textbox code="inventor.artifact.list.label.chimpum" path="chimpum.code"/>
+			<acme:input-textbox code="inventor.artifact.list.label.chimpum" path="chimpum"/>
 			<acme:input-textbox code="inventor.artifact.list.label.type" path="artifactType"/>
 		</jstl:when>
 	</jstl:choose>
